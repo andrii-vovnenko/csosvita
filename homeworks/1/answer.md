@@ -42,7 +42,7 @@ performance. Note: in all examples, integer division is used.
             for (int j = 1; j < i; j *= 2)
               api()
 
-    ***Answer: n(outer loop) * log(n)(inner loop)***
+    ***Answer: For each i from outer loop, inner loop runs approximately log(i), because j grows exponentially multiplied by 2 every iteration till lower than i. n(outer loop) * log(n)(inner loop)***
   - g.
   
           for (int i = 1; i <= n; i++)
