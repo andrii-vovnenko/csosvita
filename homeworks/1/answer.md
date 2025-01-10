@@ -70,7 +70,7 @@ performance. Note: in all examples, integer division is used.
               api()
             f(n/2)
 
-    ***Answer: n + n/2 + n/4 ... = 2n  ***
+    ***Answer: n + n/2 + n/4 ... = n***
 
     - j. 
     
@@ -83,8 +83,7 @@ performance. Note: in all examples, integer division is used.
 
     ***Answer:  (n + 2(n/2)) + 4(n/4) + 8(n/8) ... = n * log(n)***
 
-    # Estimate the lower bound of the time complexity
-    - k.
+    - k. Estimate the lower bound of the time complexity
     
           void permute(prefix: array, n: int)
             if prefix.length == n:
@@ -94,4 +93,4 @@ performance. Note: in all examples, integer division is used.
               if not prefix.contains(num):
                 permute(prefix + [num], n)
 
-      # permute(prefix=[], n=3) // function call example
+    ***Answer: n! recursive calls  and for each recursive call n^2 will be made (for loop and contains). Algorithm should calculate every permutation so the lower and higher bound equal n^2 * n!***
