@@ -50,7 +50,7 @@ performance. Note: in all examples, integer division is used.
               for (int k = 1; k <= j; k++)
                 api()
 
-    ***Answer: n * n * n***
+    ***Answer: Lets broke these loops to three devided loops, each of them depends on outer loop and runs by n time, so we could say that overall its works by n * n * n = n^3. Or formula for three nested loops can be used n(n+1)(n+2) / 6 in order to calculate accurate count api calls ***
 
   - h.
   
