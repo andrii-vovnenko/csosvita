@@ -138,7 +138,7 @@ performance. Note: in all examples, integer division is used.
   - B. ***Answer N * L hash table can consists of N words, max length is L***
 - 6
   - 1.
-    https://leetcode.com/problems/majority-element/submissions/1506101502/<br/>
+    https://leetcode.com/problems/majority-element/submissions/1506101502/
           
           var majorityElementLinear = function(nums) {
             let max;
@@ -171,4 +171,29 @@ performance. Note: in all examples, integer division is used.
               }
             }
           };
+  - 2. 
+    https://leetcode.com/problems/majority-element/submissions/1506177790/
+
+        var majorityElement = function(nums) {
+          const half = Math.ceil(nums.length / 2);
+          const candidate = [nums[0], 0];
+          for (const num of nums) {
+            if (num === candidate[0]) {
+              candidate[1]++;
+            } else {
+              candidate[1]--;
+            }
+
+            if (candidate[1] === half) {
+              return candidate[0];
+            }
+
+            if (candidate[1] === 0) {
+              candidate[0] = num;
+              candidate[1] = 1;
+            }
+          }
+
+          return candidate[0]
+        };
 
