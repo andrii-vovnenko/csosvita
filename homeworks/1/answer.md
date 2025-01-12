@@ -50,7 +50,7 @@ performance. Note: in all examples, integer division is used.
               for (int k = 1; k <= j; k++)
                 api()
 
-    ***Answer: Lets broke these loops to three devided loops, each of them depends on outer loop and runs by n time, so we could say that overall its works by n * n * n = n^3. Or formula for three nested loops can be used n(n+1)(n+2) / 6 in order to calculate accurate count api calls ***
+    ***Answer: Lets broke these loops to three devided loops, each of them depends on outer loop and runs by n time, so we could say that overall its works by n * n * n = n^3. Or formula for three nested loops can be used n(n+1)(n+2) / 6 in order to calculate accurate count api calls***
 
   - h.
   
@@ -72,26 +72,26 @@ performance. Note: in all examples, integer division is used.
 
     ***Answer: n + n/2 + n/4 ... = n***
 
-    - j. 
-    
-          void f(int n)
-            if n == 0: return
-            for (int i = 0; i < n; i++)
-              op()
-            f(n/2)
-            f(n/2)
+  - j. 
+  
+        void f(int n)
+          if n == 0: return
+          for (int i = 0; i < n; i++)
+            op()
+          f(n/2)
+          f(n/2)
 
     ***Answer:  (n + 2(n/2)) + 4(n/4) + 8(n/8) ... = n * log(n)***
 
-    - k. Estimate the lower bound of the time complexity
-    
-          void permute(prefix: array, n: int)
-            if prefix.length == n:
-              print(prefix)
-              return
-            for (int num = 0; num < n; num++)
-              if not prefix.contains(num):
-                permute(prefix + [num], n)
+  - k. Estimate the lower bound of the time complexity
+  
+        void permute(prefix: array, n: int)
+          if prefix.length == n:
+            print(prefix)
+            return
+          for (int num = 0; num < n; num++)
+            if not prefix.contains(num):
+              permute(prefix + [num], n)
 
     ***Answer: n! recursive calls  and for each recursive call n^2 will be made (for loop and contains). Algorithm should calculate every permutation so the lower and higher bound equal n^2 * n!***
 
