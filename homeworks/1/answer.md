@@ -135,3 +135,4 @@ performance. Note: in all examples, integer division is used.
                  2   3
                 /     \
                3       2
+  - B. ***Answer N * L hash table can consists of N words, max length is L***
