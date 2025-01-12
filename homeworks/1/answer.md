@@ -94,3 +94,44 @@ performance. Note: in all examples, integer division is used.
                 permute(prefix + [num], n)
 
     ***Answer: n! recursive calls  and for each recursive call n^2 will be made (for loop and contains). Algorithm should calculate every permutation so the lower and higher bound equal n^2 * n!***
+
+- 2
+  - A. What is the space complexity of examples i, j, k in the first task? Note
+      that no tail recursion is applied.
+       - i. 
+      
+              void f(int n)
+                if n == 0: return
+                for (int i = 0; i < n; i++)
+                  api()
+                f(n/2)
+          
+          ***Answer: space complexity of for loop is 1, function call`s it-self with n / 2 till n != 0, so space complexity is log(n)***
+      - j.
+
+            void f(int n)
+              if n == 0: return
+              for (int i = 0; i < n; i++)
+                op()
+              f(n/2)
+              f(n/2)
+
+          ***Answer: space complexity is log(n), second recursive call will not affect space, because firstly first call will be done***
+
+      - k.
+
+            void permute(prefix: array, n: int)
+              if prefix.length == n:
+                print(prefix)
+                return
+              for (int num = 0; num < n; num++)
+                if not prefix.contains(num):
+                  permute(prefix + [num], n)
+
+          ***Answer The depth of call stack will not exceed n calls, each new branch will not start till previous finish***
+              
+              like 1
+                  / \
+                 2   3
+                /     \
+               3       2
