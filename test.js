@@ -1,59 +1,25 @@
-/**
- * https://leetcode.com/problems/majority-element/submissions/1506101502/
- * @param {number[]} nums
- * @return {number}
- */
-var majorityElementLinear = function(nums) {
-  let max;
-  const map = {};
-  for (const num of nums) {
-    map[num] = (map[num] || 0) + 1;
-    
-    if (!max || map[num] > map[max]) {
-      max = num;
-    }
-  }
+function main(input) {
+  const result = [];
+    const numbers = input.split('');
 
-  return max;
+    for(let i = 0; i < numbers.length; i++) {
+        let temp1 = numbers[i];
+        if (temp1 === '0') continue;
+        for (let j = 0; j < numbers.length; j++) {
+          if (i === j) continue;
+          let temp2 = numbers[j];
+          for (let k = 0; k < numbers.length; k++) {
+            if (j === k || i === k) continue;
+            let temp3 = numbers[k];
+            const temp = `${temp1}${temp2}${temp3}`;
+            if (!result.includes(temp)) {
+              result.push(temp);
+            }
+          }
+        }
+    }
+
+    console.log(result);
 };
 
-// https://leetcode.com/problems/majority-element/submissions/1506123884/
-var majorityElementQuadratic = function(nums) {
-  const half = nums.length / 2;
-  for (const num of nums) {
-    let count = 0;
-    for (const n of nums) {
-      if (n === num) {
-        count++;
-      }
-    }
-    
-    if (count > half) {
-      return num;
-    }
-  }
-};
-
-
-var majorityElementBoyer = function(nums) {
-  const half = nums.length / 2;
-  const candidate = [nums[0], 0];
-  for (const num of nums) {
-    if (num === candidate[0]) {
-      candidate[1]++;
-    } else {
-      candidate[1]--;
-    }
-
-    if (candidate[1] === half) {
-      return candidate[0];
-    }
-
-    if (candidate[1] === 0) {
-      candidate[0] = num;
-      candidate[1] = 1;
-    }
-  }
-
-  return candidate[0]
-};
+main('111111');
